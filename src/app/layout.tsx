@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "SaaSForge — SaaS Boilerplate Generator",
   description:
     "Generate a complete, production-ready SaaS starter in seconds. Pick your stack, get a GitHub repo with auth, database, payments, and CI/CD.",
+  verification: {
+    google: "iW2FuoExxutmdaSY1w8w1BzX6eyTjd8DG5tr4NEBIds",
+  },
 };
 
 export default function RootLayout({
