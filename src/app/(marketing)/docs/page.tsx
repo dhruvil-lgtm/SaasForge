@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Documentation",
+  description:
+    "Learn how to use SaaSForge to generate production-ready SaaS boilerplates. Supports Next.js, Express, FastAPI, Go, Rails, and Laravel with auth, database, and CI/CD.",
+};
+
 export default function DocsPage() {
   return (
     <div className="container mx-auto px-4 pt-32 pb-16 max-w-3xl">
