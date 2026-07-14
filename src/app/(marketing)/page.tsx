@@ -8,13 +8,13 @@ import { FAQ } from "@/components/landing/faq";
 import { CTA } from "@/components/landing/cta";
 
 export const metadata: Metadata = {
-  title: "SaaS Boilerplate Generator",
+  title: "SaaS Boilerplate Generator — Instantly Generate & Deploy",
   description:
-    "Generate a production-ready SaaS boilerplate in seconds. Pick your stack (Next.js, Express, FastAPI, Go, Rails, Laravel) and get a GitHub repo with auth, database, CI/CD, and payments pre-configured.",
+    "Generate a production-ready SaaS boilerplate in seconds with SaasForge. Choose from Next.js, Express, FastAPI, Go, Rails, or Laravel and get a GitHub repo with auth, Stripe, Supabase, and CI/CD instantly.",
   openGraph: {
-    title: "SaaSForge — SaaS Boilerplate Generator",
+    title: "SaasForge — Instantly Generate SaaS Boilerplates",
     description:
-      "Generate a production-ready SaaS boilerplate in seconds. Pick your stack and get a GitHub repo with auth, database, CI/CD, and payments.",
+      "Generate a production-ready SaaS boilerplate in seconds. Pick your stack and get a GitHub repo with auth, Stripe payments, Supabase database, and CI/CD pipelines pre-configured.",
   },
 };
 

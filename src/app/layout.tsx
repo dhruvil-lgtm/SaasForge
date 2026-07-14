@@ -21,22 +21,24 @@ const readexPro = Readex_Pro({
 
 export const metadata: Metadata = {
   title: {
-    default: "SaaSForge — SaaS Boilerplate Generator",
-    template: "%s | SaaSForge",
+    default: "SaasForge — Instantly Generate SaaS Boilerplates with Auth, CI/CD & Payments",
+    template: "%s | SaasForge",
   },
   description:
-    "Generate a production-ready SaaS boilerplate in seconds. Pick your stack (Next.js, Express, FastAPI, Go, Rails, Laravel) and get a GitHub repo with auth, database, CI/CD, and payments pre-configured.",
+    "Generate a production-ready SaaS boilerplate in seconds with SaasForge. Pick from Next.js, Express, FastAPI, Go, Rails, or Laravel. Get a GitHub repo with auth, Stripe payments, Supabase database, and CI/CD pipelines pre-configured — no setup required.",
   keywords: [
-    "SaaS boilerplate",
-    "SaaS starter",
+    "SaaS boilerplate generator",
+    "SaaS starter kit",
+    "Next.js SaaS boilerplate",
     "boilerplate generator",
-    "Next.js boilerplate",
     "production-ready SaaS",
     "startup boilerplate",
     "web app generator",
     "SaaS template",
     "auth database CI/CD",
     "Supabase boilerplate",
+    "Stripe SaaS starter",
+    "SaasForge",
   ],
   authors: [{ name: "Dhruvil Shah" }],
   creator: "Dhruvil Shah",
