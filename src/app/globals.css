@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Marck+Script&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -98,6 +99,8 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-readex: var(--font-readex-pro);
+  --font-marck: "Marck Script", cursive;
+  --font-italiana: "Italiana", serif;
 }
 
 @layer base {
@@ -177,4 +180,52 @@
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent) 0% 50%;
   background-size: 200% 200%;
   animation: border-shimmer 3s ease-in-out infinite;
+}
+
+.mesh-gradient-1 {
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 30%, rgba(200, 210, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    #000000;
+}
+
+.mesh-gradient-2 {
+  background:
+    radial-gradient(ellipse 70% 40% at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(220, 230, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 50% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    #000000;
+}
+
+.mesh-gradient-3 {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 0%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(230, 235, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 60% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    #000000;
+}
+
+.mesh-gradient-4 {
+  background:
+    radial-gradient(ellipse 80% 40% at 20% 10%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 80% 80%, rgba(210, 220, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 40% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    #000000;
+}
+
+.mesh-gradient-5 {
+  background:
+    radial-gradient(ellipse 70% 50% at 30% 0%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(240, 245, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 10% 60%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    #000000;
+}
+
+.mesh-gradient-6 {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 10% 80%, rgba(220, 225, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 80% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    #000000;
 }

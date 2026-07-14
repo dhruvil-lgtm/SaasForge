@@ -1,71 +1,58 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-
 const testimonials = [
   {
     name: "Sarah Chen",
-    role: "Indie Hacker",
-    content: "I built and launched my MVP in one weekend. The Next.js boilerplate saved me at least two weeks of setup work.",
-    initials: "SC",
+    role: "Built Collate — a link-in-bio analytics tool",
+    content: "I was stuck for two weeks trying to get auth + stripe working together. Saasforge generated the whole thing in one go. I just deleted the parts I didn't need and deployed.",
   },
   {
     name: "Marcus Johnson",
     role: "Founder @ TaskFlow",
-    content: "The Supabase integration alone was worth it. Everything just worked out of the box. Highly recommend.",
-    initials: "MJ",
+    content: "The supabase setup alone saved me a weekend of reading docs. Migrations, rls, seed data — it was all there. I've recommended this to three other founders this month.",
   },
   {
     name: "Priya Patel",
-    role: "Full-Stack Developer",
-    content: "I've tried a dozen boilerplates. SaaSForge is the only one that actually gave me a working codebase I could deploy immediately.",
-    initials: "PP",
+    role: "Freelance full-stack developer",
+    content: "I used saasforge as the starting point for my last four client projects. Each one needed a different stack — next.js, fastapi, rails. It handled all of them. No boilerplate boilerplate.",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-black">
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
+    <section className="relative py-20 md:py-32 overflow-hidden mesh-gradient-3">
+      <div className="absolute top-1/4 left-0 w-[300px] h-[300px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-sm text-white/50 lowercase mb-6">
-            real feedback
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Trusted by founders
-          </h2>
-          <p className="mt-4 text-lg text-white/40 max-w-xl mx-auto lowercase">
-            join hundreds who shipped faster with saasforge.
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <p className="text-white/30 text-xs uppercase tracking-[0.2em] mb-4">
+            real people, real projects
           </p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+            Used by people who<br />
+            <span className="text-white/40">actually ship things.</span>
+          </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="group relative rounded-2xl border border-white/[0.06] bg-neutral-900/30 p-7 hover:bg-neutral-900/50 transition-all duration-500 hover:border-white/[0.12] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.03)]"
-              style={{ animationDelay: `${i * 150}ms` }}
+              className="relative rounded-2xl border border-white/[0.06] bg-neutral-900/40 p-7 hover:bg-neutral-900/60 transition-all duration-500 hover:border-white/[0.1]"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="relative">
-                <svg className="w-8 h-8 text-white/10 mb-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <p className="text-sm text-white/50 leading-relaxed mb-6">
-                  {t.content}
-                </p>
-                <div className="flex items-center gap-3">
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-white/10 text-white/70 text-xs">
-                      {t.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="text-sm font-medium text-white/80">{t.name}</p>
-                    <p className="text-xs text-white/40">{t.role}</p>
-                  </div>
+              <div className="flex items-center gap-2 mb-5">
+                <div className="flex -space-x-1">
+                  {[...Array(3)].map((_, j) => (
+                    <svg key={j} className="w-3.5 h-3.5 text-white/40" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
                 </div>
+              </div>
+              <p className="text-sm text-white/50 leading-relaxed mb-6">
+                {t.content}
+              </p>
+              <div>
+                <p className="text-sm font-medium text-white/80">{t.name}</p>
+                <p className="text-xs text-white/40 mt-0.5">{t.role}</p>
               </div>
             </div>
           ))}

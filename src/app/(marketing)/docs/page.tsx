@@ -8,79 +8,98 @@ export const metadata: Metadata = {
 
 export default function DocsPage() {
   return (
-    <div className="container mx-auto px-4 pt-32 pb-16 max-w-3xl">
-      <h1 className="text-4xl font-bold tracking-tight text-white mb-8">
-        Documentation
-      </h1>
+    <div className="container mx-auto px-4 pt-32 pb-16 max-w-3xl relative">
+      <div className="absolute inset-0 bg-dot-grid pointer-events-none opacity-20" />
+      <div className="relative">
+        <h1 className="text-4xl font-bold tracking-tight text-white mb-8">
+          Documentation
+        </h1>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-medium text-white mb-4">Getting Started</h2>
-        <div className="text-white/60 space-y-4">
-          <p>
-            saasforge generates a complete, production-ready saas boilerplate based on your
-            technology preferences. here&apos;s how to use it.
-          </p>
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Go to the <a href="/generate" className="text-white hover:underline">Generator</a> page</li>
-            <li>Select your preferred framework (next.js, express, fastapi, go, rails, or laravel)</li>
-            <li>Choose your features (auth, database, ui, deployment)</li>
-            <li>Name your project</li>
-            <li>Connect your github account</li>
-            <li>Click &ldquo;Generate&rdquo; &mdash; we&apos;ll create a repo under your account</li>
-          </ol>
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-medium text-white mb-4">Supported Stacks</h2>
-        <div className="grid gap-3">
-          {[
-            { name: "Next.js + TypeScript", desc: "Full-stack React framework with App Router, Server Components, and the largest ecosystem." },
-            { name: "Node.js + Express", desc: "Traditional server-side framework with EJS templates, perfect for APIs and SSR apps." },
-            { name: "Python + FastAPI", desc: "High-performance async Python framework with automatic OpenAPI docs." },
-            { name: "Go + Gin + Templ", desc: "Blazing-fast compiled language with Gin router and type-safe templating." },
-            { name: "Ruby on Rails", desc: "Full-featured MVC framework with convention-over-configuration philosophy." },
-            { name: "Laravel (PHP)", desc: "Elegant PHP framework with extensive ecosystem including Sanctum auth and Cashier billing." },
-          ].map((stack) => (
-            <div key={stack.name} className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-medium text-white">{stack.name}</h3>
-              <p className="text-sm text-white/50 mt-1">{stack.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-medium text-white mb-4">Features Included</h2>
-        <ul className="space-y-3 text-white/60">
-          <li><strong className="text-white">JWT Authentication</strong> &mdash; Complete login, signup, and password reset flows with middleware protection.</li>
-          <li><strong className="text-white">Supabase Database</strong> &mdash; Pre-configured client with environment variables, ready to connect.</li>
-          <li><strong className="text-white">CI/CD Pipeline</strong> &mdash; GitHub Actions workflows for testing, linting, and deployment.</li>
-          <li><strong className="text-white">Docker Support</strong> &mdash; Dockerfiles for production-ready containerization.</li>
-          <li><strong className="text-white">Deployment Config</strong> &mdash; Vercel, Railway, or Docker Compose configurations included.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-medium text-white mb-4">API Reference</h2>
-        <p className="text-white/60 mb-4">
-          The generated boilerplate includes these API endpoints:
-        </p>
-        <div className="space-y-3">
-          <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
-            <code className="text-sm font-mono bg-white/10 text-white/80 px-2 py-0.5 rounded">POST /auth/signup</code>
-            <p className="text-sm text-white/50 mt-1">Create a new user account with email and password.</p>
+        <section className="mb-14">
+          <h2 className="text-2xl font-medium text-white mb-5">How it works</h2>
+          <div className="text-white/50 space-y-4 leading-relaxed">
+            <p>
+              You pick a stack. We build a complete, production-ready SaaS boilerplate. We push it to your GitHub. You build on top of it.
+            </p>
+            <ol className="space-y-3 list-none">
+              {[
+                "Go to the generator and pick a framework (Next.js, Express, FastAPI, Go, Rails, or Laravel).",
+                "Choose your features — auth, database, payments, CI/CD, whatever you need.",
+                "Name your project and connect your GitHub account.",
+                "Hit generate. We assemble the boilerplate and push a new repo under your account.",
+              ].map((step, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/5 text-xs text-white/40 shrink-0 mt-0.5">{i + 1}</span>
+                  <span className="text-sm text-white/50">{step}</span>
+                </li>
+              ))}
+            </ol>
           </div>
-          <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
-            <code className="text-sm font-mono bg-white/10 text-white/80 px-2 py-0.5 rounded">POST /auth/login</code>
-            <p className="text-sm text-white/50 mt-1">Authenticate with email and password, receive a JWT token.</p>
+        </section>
+
+        <section className="mb-14">
+          <h2 className="text-2xl font-medium text-white mb-5">Supported stacks</h2>
+          <div className="grid gap-2">
+            {[
+              { name: "Next.js + TypeScript", desc: "Full-stack React with App Router, Server Components, Tailwind, and the largest ecosystem." },
+              { name: "Node.js + Express", desc: "Traditional server-side with EJS templates, API routing, and session management." },
+              { name: "Python + FastAPI", desc: "Async Python framework with automatic OpenAPI docs and Pydantic validation." },
+              { name: "Go + Gin + Templ", desc: "Compiled language with Gin router and type-safe HTML templating." },
+              { name: "Ruby on Rails", desc: "MVC with convention-over-configuration, Active Record, and Hotwire." },
+              { name: "Laravel (PHP)", desc: "Elegant PHP framework with Sanctum auth, Cashier billing, and Forge deployment." },
+            ].map((stack) => (
+              <div key={stack.name} className="rounded-xl border border-white/[0.06] bg-neutral-900/30 p-4">
+                <h3 className="text-sm font-medium text-white">{stack.name}</h3>
+                <p className="text-sm text-white/40 mt-1">{stack.desc}</p>
+              </div>
+            ))}
           </div>
-          <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
-            <code className="text-sm font-mono bg-white/10 text-white/80 px-2 py-0.5 rounded">GET /dashboard</code>
-            <p className="text-sm text-white/50 mt-1">Protected route that returns user dashboard data (requires auth token).</p>
+        </section>
+
+        <section className="mb-14">
+          <h2 className="text-2xl font-medium text-white mb-5">What&apos;s included</h2>
+          <div className="grid gap-2">
+            {[
+              { title: "JWT Auth", desc: "Signup, login, password reset, protected routes. Works with any frontend." },
+              { title: "Supabase", desc: "Pre-configured client, schema migrations, RLS policies, seed data." },
+              { title: "Stripe billing", desc: "Subscriptions, webhooks, customer portal, metered billing." },
+              { title: "CI/CD", desc: "GitHub Actions for lint, test, build, deploy. One push to ship." },
+              { title: "Docker", desc: "Production-ready Dockerfiles and docker-compose for self-hosting." },
+              { title: "shadcn/ui", desc: "Component library with dark mode, responsive layout, accessible markup." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-white/[0.06] bg-neutral-900/30 p-4 flex items-start gap-4">
+                <div className="shrink-0">
+                  <div className="h-2 w-2 rounded-full bg-white/20 mt-2" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-medium text-white">{item.title}</h3>
+                  <p className="text-sm text-white/40 mt-0.5">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-medium text-white mb-5">API endpoints</h2>
+          <div className="grid gap-2">
+            {[
+              { method: "POST", path: "/auth/signup", desc: "Create an account with email + password." },
+              { method: "POST", path: "/auth/login", desc: "Authenticate and receive a JWT." },
+              { method: "POST", path: "/auth/logout", desc: "Invalidate the current session." },
+              { method: "GET", path: "/api/projects", desc: "List all generated projects (auth required)." },
+            ].map((endpoint) => (
+              <div key={endpoint.path} className="rounded-xl border border-white/[0.06] bg-neutral-900/30 p-4 flex items-start gap-4">
+                <span className="shrink-0 rounded-md bg-white/5 px-2 py-1 text-[11px] font-mono text-white/70">{endpoint.method}</span>
+                <div className="min-w-0">
+                  <code className="text-sm font-mono text-white/80 block break-all">{endpoint.path}</code>
+                  <p className="text-sm text-white/40 mt-0.5">{endpoint.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

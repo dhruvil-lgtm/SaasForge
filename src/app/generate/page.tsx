@@ -108,10 +108,10 @@ export default function GeneratePage() {
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white/[0.06] mb-6 animate-float">
               <Check className="h-10 w-10 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-2">Boilerplate Generated!</h2>
-            <p className="text-white/50 text-sm mb-6 lowercase">
-              your saas starter has been pushed to github.
-            </p>
+            <h2 className="text-2xl font-bold text-white mb-2">It&apos;s alive!</h2>
+                  <p className="text-white/50 text-sm mb-6 lowercase">
+                    your boilerplate has been pushed to github.
+                  </p>
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 mb-6">
               <p className="text-xs text-white/40 mb-1 lowercase">repository url</p>
               <a
@@ -149,17 +149,17 @@ export default function GeneratePage() {
     <div className="min-h-screen bg-black">
       <div className="absolute inset-0 bg-dot-grid pointer-events-none opacity-40" />
 
-      <div className="relative container mx-auto px-4 py-20 max-w-xl">
+      <div className="relative container mx-auto px-4 pt-24 pb-20 max-w-xl">
         <div className="text-center mb-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-sm text-white/50 lowercase mb-4">
             4-step wizard
           </span>
-          <h1 className="text-4xl font-bold tracking-tight text-white">
-            Generate your saas
-          </h1>
-          <p className="mt-3 text-white/40 lowercase">
-            pick your stack, we&apos;ll build the rest.
-          </p>
+            <h1 className="text-4xl font-bold tracking-tight text-white">
+              Generate your boilerplate
+            </h1>
+            <p className="mt-3 text-white/40 lowercase">
+              pick a framework, we&apos;ll ship the rest.
+            </p>
         </div>
 
         <div className="flex items-center justify-center gap-0 mb-10">
@@ -197,7 +197,7 @@ export default function GeneratePage() {
 
         <div className="relative">
           <div className="absolute inset-0 bg-white/[0.015] rounded-3xl blur-3xl pointer-events-none" />
-          <div className="relative rounded-3xl border border-white/[0.08] bg-neutral-900/50 backdrop-blur p-8">
+          <div className="relative rounded-3xl border border-white/[0.08] bg-neutral-900/50 backdrop-blur p-6 md:p-8">
             {step === "framework" && (
               <div className="space-y-5">
                 <div>
@@ -225,6 +225,7 @@ export default function GeneratePage() {
                             framework === f.id ? "text-white" : "text-white/60 group-hover:text-white/80"
                           }`}>{f.label}</p>
                           <p className="text-xs text-white/30 mt-0.5">{f.desc}</p>
+                          {f.id === "nextjs" && <p className="text-[10px] text-white/15 mt-1">recommended</p>}
                         </div>
                         {framework === f.id && (
                           <span className="absolute top-3 right-3 flex h-5 w-5 items-center justify-center rounded-full bg-white">
@@ -241,8 +242,8 @@ export default function GeneratePage() {
             {step === "config" && (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-xl font-bold text-white mb-1">Configure your project</h2>
-                  <p className="text-sm text-white/40 lowercase">name your project and connect github.</p>
+                  <h2 className="text-xl font-bold text-white mb-1">Name it & connect GitHub</h2>
+                  <p className="text-sm text-white/40 lowercase">give it a name and link your account.</p>
                 </div>
                 <div className="space-y-4">
                   <div>
@@ -262,7 +263,7 @@ export default function GeneratePage() {
                       placeholder="my-saas-app"
                       className="w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-white/20 outline-none focus:border-white/20 focus:bg-white/[0.05] transition-all duration-300"
                     />
-                    <p className="text-xs text-white/25 mt-1.5 lowercase">this will be the name of the repo on github.</p>
+                    <p className="text-xs text-white/25 mt-1.5 lowercase">the repo will appear at github.com/yourname/{repoName || "..."}.</p>
                   </div>
                   <div className="pt-2">
                     <label className="block text-sm text-white/50 mb-3 lowercase">connect github</label>
@@ -315,12 +316,12 @@ export default function GeneratePage() {
             {step === "deploy" && (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-xl font-bold text-white mb-1">Deployment & UI</h2>
-                  <p className="text-sm text-white/40 lowercase">choose how to deploy and what ui to include.</p>
+                  <h2 className="text-xl font-bold text-white mb-1">Deploy & design</h2>
+                  <p className="text-sm text-white/40 lowercase">where it goes, what it looks like.</p>
                 </div>
                 <div>
                   <label className="block text-sm text-white/50 mb-3 lowercase">deployment target</label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {deployments.map((d) => (
                       <button
                         key={d.id}
@@ -343,7 +344,7 @@ export default function GeneratePage() {
                 </div>
                 <div>
                   <label className="block text-sm text-white/50 mb-3 lowercase">ui library</label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {["shadcn", "tailwind", "minimal"].map((u) => (
                       <button
                         key={u}
@@ -370,7 +371,7 @@ export default function GeneratePage() {
               <div className="space-y-5">
                 <div>
                   <h2 className="text-xl font-bold text-white mb-1">Review & generate</h2>
-                  <p className="text-sm text-white/40 lowercase">double-check your choices before generating.</p>
+                  <p className="text-sm text-white/40 lowercase">looks good? we&apos;ll push everything to github.</p>
                 </div>
                 <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] divide-y divide-white/[0.04]">
                   {[

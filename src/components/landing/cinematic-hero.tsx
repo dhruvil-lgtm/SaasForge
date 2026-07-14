@@ -33,10 +33,10 @@ export function CinematicHero() {
           </Link>
 
           <div className="hidden md:flex items-center gap-1 bg-neutral-900/90 backdrop-blur rounded-full px-3 py-2">
-            {["platform", "solutions", "company", "support"].map((item) => (
+            {["platform", "solutions", "pricing", "docs"].map((item) => (
               <Link
                 key={item}
-                href={item === "platform" ? "/generate" : item === "solutions" ? "/#features" : item === "company" ? "/pricing" : "/docs"}
+                href={item === "platform" ? "/generate" : item === "solutions" ? "/#features" : "/" + item}
                 className="text-neutral-300 hover:text-white transition-colors text-sm px-5 py-2 rounded-full"
               >
                 {item}

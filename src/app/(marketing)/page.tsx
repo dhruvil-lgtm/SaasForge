@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CinematicHero } from "@/components/landing/cinematic-hero";
 import { Features } from "@/components/landing/features";
+import { Mission } from "@/components/landing/mission";
 import { Testimonials } from "@/components/landing/testimonials";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { FAQ } from "@/components/landing/faq";
@@ -22,6 +23,7 @@ export default function HomePage() {
     <>
       <CinematicHero />
       <Features />
+      <Mission />
       <Testimonials />
       <PricingSection />
       <FAQ />
